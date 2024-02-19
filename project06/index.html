@@ -1,0 +1,257 @@
+<!-- 
+  project7
+
+  By: Gabriel Sessions
+  Last Edited: September 3rd, 2022
+  EN 1 Simple Robotics
+  Fall 2022
+  
+  (Add description here)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+  Same Boilerplate as the index.html file
+  Make sure to update the page title!
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Update This! -->
+  <title>My Project</title>
+
+  <!-- DO NOT DELETE BELOW -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <!-- DO NOT DELETE ABOVE -->
+
+</head>
+
+<body>
+  <!-- 
+    Navbar that links back to the homepage (index.html) 
+  -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Project Title -->
+  <h1 style="margin-top: 1rem; margin-bottom: 2rem; text-align: center;">Project 6: Simple car</h1>
+
+  <div class="container d-flex justify-content-center">
+    <div class="row">
+
+      <!-- 
+        Project Description 
+        Add your own project details here!
+      -->
+      <!-- Begin Left Column -->
+      <div class="col-sm mx-4">
+        <h2 class="text-left">Description</h2>
+        <p>
+        </p>
+        <p>I made a car with LEGOs and then programmed the hub to make it move forward, backward, and spin. Below are the videos of the robot moving, along with the code used in Python.</p>
+
+        <h2 class="text-left">Forward Code</h2>
+        <pre style="border-radius: 25px; background: #cfcfcf; padding: 20px;">
+import button, motor, port, time
+
+# Causes the program to stall until the center button is pressed
+# Do not delete this function!
+def wait_until_button_pressed():
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 0):
+        time.sleep_ms(1)
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 1):
+        time.sleep_ms(1)
+
+# wait for button press
+print('Waiting for button press...')
+wait_until_button_pressed()
+
+# MOVE FORWARD
+# - add your code here for moving the robot forward
+motor.motor_move_at_power(port.PORTC, -7000)
+motor.motor_move_at_power(port.PORTD, 7000)
+time.sleep_ms(2000)
+motor.motor_stop()
+
+      
+            </pre>
+      </div>
+      <h2 class="text-left">Back Code</h2>
+        <pre style="border-radius: 25px; background: #cfcfcf; padding: 20px;">
+import button, motor, port, time
+
+# Causes the program to stall until the center button is pressed
+# Do not delete this function!
+def wait_until_button_pressed():
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 0):
+        time.sleep_ms(1)
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 1):
+        time.sleep_ms(1)
+
+# wait for button press
+print('Waiting for button press...')
+wait_until_button_pressed()
+
+# MOVE BACKWARD
+# - add your code here for moving the robot backward
+motor.motor_move_at_power(port.PORTC, 7000)
+motor.motor_move_at_power(port.PORTD, -7000)
+time.sleep_ms(2000)
+motor.motor_stop()
+            </pre>
+      </div>
+                <h2 class="text-left">Arcsmall Code</h2>
+        <pre style="border-radius: 25px; background: #cfcfcf; padding: 20px;">
+import button, motor, port, time
+
+# Causes the program to stall until the center button is pressed
+# Do not delete this function!
+def wait_until_button_pressed():
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 0):
+        time.sleep_ms(1)
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 1):
+        time.sleep_ms(1)
+
+# wait for button press
+print('Waiting for button press...')
+wait_until_button_pressed()
+
+# Drive in a small arc
+# - add your code here for moving the robot in a small arc
+motor.motor_move_at_power(port.PORTC, 7500)
+motor.motor_move_at_power(port.PORTD, 200)
+time.sleep_ms(1000)
+motor.motor_stop()
+            </pre>
+      </div>
+           <h2 class="text-left">Arcbig Code</h2>
+        <pre style="border-radius: 25px; background: #cfcfcf; padding: 20px;">
+import button, motor, port, time
+
+# Causes the program to stall until the center button is pressed
+# Do not delete this function!
+def wait_until_button_pressed():
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 0):
+        time.sleep_ms(1)
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 1):
+        time.sleep_ms(1)
+
+# wait for button press
+print('Waiting for button press...')
+wait_until_button_pressed()
+
+# MOVE BACKWARD
+# - add your code here for moving the robot backward
+motor.motor_move_at_power(port.PORTC, 7000)
+motor.motor_move_at_power(port.PORTD, -7000)
+time.sleep_ms(2000)
+motor.motor_stop()
+            </pre>
+      </div>
+           <h2 class="text-left">Spin Code</h2>
+        <pre style="border-radius: 25px; background: #cfcfcf; padding: 20px;">
+import button, motor, port, time
+
+# Causes the program to stall until the center button is pressed
+# Do not delete this function!
+def wait_until_button_pressed():
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 0):
+        time.sleep_ms(1)
+    while (button.button_isPressed(button.BUTTON_ON_OFF)[0] == 1):
+        time.sleep_ms(1)
+
+# wait for button press
+print('Waiting for button press...')
+wait_until_button_pressed()
+
+# MOVE BACKWARD
+# - add your code here for moving the robot backward
+motor.motor_move_at_power(port.PORTC, 7000)
+motor.motor_move_at_power(port.PORTD, -7000)
+time.sleep_ms(2000)
+motor.motor_stop()
+            </pre>
+      </div>
+ 
+
+
+
+      <!-- End Left Column -->
+
+      <!-- 
+        Insert Images or Carousel of images
+
+        Bootstrap Carousels: 
+        https://getbootstrap.com/docs/5.2/components/carousel/#how-it-works
+      -->
+      <!-- Delete these divs and replace with your own pics and videos! -->
+      <!-- For videos, upload to Google Drive and embed them as an iframe -->
+
+      <!-- Begin Right Column -->
+      <div class="col-sm">
+        <div style="width: 90%;
+                height: 40%;
+                border: 6px solid black;
+                margin: 20px;
+                text-align: center;
+                vertical-align: center;">
+          <p style="margin:20% 0"><iframe src="https://drive.google.com/file/d/1RWReVq9RH9IjWuh2i9DjuziEYVaeUolK/preview" width="640" height="480" allow="autoplay"></iframe></p>
+        </div>
+        <div style="width: 90%;
+                height: 40%;
+                border: 6px solid black;
+                margin: 20px;
+                text-align: center;
+                vertical-align: center;">
+          <p style="margin:20% 0"><iframe src="https://drive.google.com/file/d/10yAGLQixalQt4hs2bJncaO_Wd70aJcus/preview" width="640" height="480" allow="autoplay"></iframe></p>
+        </div>
+          <div class="col-sm">
+        <div style="width: 90%;
+                height: 40%;
+                border: 6px solid black;
+                margin: 20px;
+                text-align: center;
+                vertical-align: center;">
+          <p style="margin:20% 0"><iframe src="https://drive.google.com/file/d/1dpqZ4MUrTF75LzzRZqPiPLEJ2yO3qPef/preview" width="640" height="480" allow="autoplay"></iframe></p>
+        </div>
+        <div style="width: 90%;
+                height: 40%;
+                border: 6px solid black;
+                margin: 20px;
+                text-align: center;
+                vertical-align: center;">
+          <p style="margin:20% 0"><iframe src="https://drive.google.com/file/d/1kyJGApxmyoCnvnDL7Gw70KEbSyjC3eZ6/preview" width="640" height="480" allow="autoplay"></iframe></p>
+        </div>
+          <div class="col-sm">
+        <div style="width: 90%;
+                height: 40%;
+                border: 6px solid black;
+                margin: 20px;
+                text-align: center;
+                vertical-align: center;">
+          <p style="margin:20% 0"><iframe src="https://drive.google.com/file/d/15IaU9XNTFF6eFiDGVrVpnmgJxvFu94dW/preview" width="640" height="480" allow="autoplay"></iframe></p>
+        </div>
+       
+      </div>
+      <!-- End Right Column -->
+
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

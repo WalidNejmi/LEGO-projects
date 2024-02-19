@@ -1,0 +1,132 @@
+<!-- 
+  project9
+
+  By: Gabriel Sessions
+  Last Edited: September 3rd, 2022
+  EN 1 Simple Robotics
+  Fall 2022
+  
+  (Add description here)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+  Same Boilerplate as the index.html file
+  Make sure to update the page title!
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Update This! -->
+  <title>My Project</title>
+
+  <!-- DO NOT DELETE BELOW -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <!-- DO NOT DELETE ABOVE -->
+
+</head>
+
+<body>
+  <!-- 
+    Navbar that links back to the homepage (index.html) 
+  -->
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Project Title -->
+  <h1 style="margin-top: 1rem; margin-bottom: 2rem; text-align: center;">Project 9: Robotic Arm</h1>
+
+  <div class="container d-flex justify-content-center">
+    <div class="row">
+
+      <!-- 
+        Project Description 
+        Add your own project details here!
+      -->
+      <!-- Begin Left Column -->
+      <div class="col-sm mx-4">
+        <h2 class="text-left">Description</h2>
+        <p>
+        </p>
+        <p>Here is the robotic arm I made, which is able to take a white ping pong ball when it detects it, and then place it on the right.</p>
+
+        <h2 class="text-left">Code</h2>
+        <pre style="border-radius: 25px; background: #cfcfcf; padding: 20px;">
+import button, force_sensor, color_sensor, motor, port, sound, time
+
+color = color_sensor.get_color(port.PORTC)
+
+colors = {
+    -1:'ERR',
+    0:"LEGO_BLACK",
+    1:"LEGO_MAGENTA",
+    2:"LEGO_PURPLE",
+    3:"LEGO_BLUE",
+    4:"LEGO_AZURE",
+    5:"LEGO_TURQUOISE",
+    6:"LEGO_GREEN",
+    7:"LEGO_YELLOW",
+    8:"LEGO_ORANGE",
+    9:"LEGO_RED",
+    10:"LEGO_WHITE",
+    11:"LEGO_DIM_WHITE",
+}
+
+print(colors[color_sensor.get_color(port.PORTD)])
+print(color_sensor.get_reflection(port.PORTD))
+
+color = color_sensor.get_color(port.PORTC)
+if color == LEGO_WHITE:
+    time.sleep_ms(1000)
+    motor.motor_move_at_power(port.PORTD, -2000)
+    time.sleep_ms(1000)
+    motor.motor_move_at_power(port.PORTD, 3950)
+    time.sleep_ms(750)
+    motor.motor_move_at_power(port.PORTD, -4300)
+    time.sleep_ms(500)
+    motor.motor_stop()      
+            </pre>
+      </div>
+      <!-- End Left Column -->
+
+      <!-- 
+        Insert Images or Carousel of images
+
+        Bootstrap Carousels: 
+        https://getbootstrap.com/docs/5.2/components/carousel/#how-it-works
+      -->
+      <!-- Delete these divs and replace with your own pics and videos! -->
+      <!-- For videos, upload to Google Drive and embed them as an iframe -->
+
+      <!-- Begin Right Column -->
+        <div style="width: 90%;
+                height: 40%;
+                border: 6px solid black;
+                margin: 20px;
+                text-align: center;
+                vertical-align: center;">
+          <p style="margin:20% 0"><iframe src="https://drive.google.com/file/d/1UtSfNE3mCQzMePQgzPZkCNZ0GEmtp0IR/preview" width="640" height="480" allow="autoplay"></iframe></p>
+        </div>
+      </div>
+      <!-- End Right Column -->
+
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>
